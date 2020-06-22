@@ -1,6 +1,6 @@
 # Makefile for Pinocchio
-CC = g++
-CCFLAGS = -c -O3 -Wall -fPIC
+CXX = g++
+CXXFLAGS = -c -std=c++11 -Wall -fPIC
 #CCFLAGS = -c -g3 -O0 -Wall -fPIC
 LIBS = -lm -fPIC
 
@@ -12,13 +12,13 @@ BUILD_DIR = ./`uname -s`-`uname -m`
 
 #OBJECTS_OS := $(foreach obj, $(OBJECT_NAMES), $(BUILD_DIR)/$(obj))
 
-TARGET = libpinocchio.a 
+TARGET = libpinocchio.a
 
 $(TARGET): $(OBJECTS)
 	ar rcs $@ $^
 
 .cpp.o:
-	$(CC) $(CCFLAGS) $<
+	$(CXX) $(CXXFLAGS) $<
 
 
 #do a makedepend and remove all the external dependencies from the makefile

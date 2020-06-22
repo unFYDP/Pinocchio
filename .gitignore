@@ -9,6 +9,7 @@
 *.orig
 *.patch
 **b~*
+DemoUI
 bin/
 obj/
 Debug/

@@ -8,8 +8,8 @@ else
 	TARGET_EXT = Linux
 endif
 
-CC = g++
-CCFLAGS = -c -O3 -Wall -fPIC $(OS_COMPILE_FLAGS)
+CXX = g++
+CXXFLAGS = -c -std=c++11 -Wall -fPIC $(OS_COMPILE_FLAGS)
 # Uncomment this to use a debug version
 #CCFLAGS = -c -g3 -O0 -Wall -fPIC $(OS_COMPILE_FLAGS)
 
@@ -17,13 +17,13 @@ TARGETBASE = AttachWeights
 TARGET = $(TARGETBASE)$(TARGET_EXT)
 
 $(TARGET) : stdfx.o $(TARGETBASE).o
-	gcc -O3 -Wall -fPIC -o $(TARGET) stdafx.o $(TARGETBASE).o ../Pinocchio/libpinocchio.a -lstdc++
+	g++ -O3 -Wall -fPIC -o $(TARGET) stdafx.o $(TARGETBASE).o ../Pinocchio/libpinocchio.a -lstdc++
 
 stdfx.o : stdafx.cpp stdafx.h
-	$(CC) $(CCFLAGS) stdafx.cpp
-	
+	$(CXX) $(CXXFLAGS) stdafx.cpp
+
 $(TARGET).o : stdafx.h
-	$(CC) $(CCFLAGS) $(TARGET).cpp
+	$(CXX) $(CXXFLAGS) $(TARGET).cpp
 
 clean :
 	rm -f *.o
