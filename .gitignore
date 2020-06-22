@@ -9,14 +9,12 @@
 *.orig
 *.patch
 **b~*
-DemoUI
 bin/
 obj/
 Debug/
 debug/
 Release/
 release/
-*.obj
 \#*
 .\#*
 *.log
@@ -29,6 +27,7 @@ release/
 BuildLog.htm
 /debug/
 /fltk-1.1.9/
+DemoUI/DemoUI
 Pinocchio/libpinocchio.a
 AttachWeights/attachWeights
 AttachWeights/AttachWeights
